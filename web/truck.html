@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Truck Details - ColdTrack</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>ColdTrack - Cold Chain Temperature Monitor</h2>
+    <div class="nav">
+        <a href="/">Dashboard</a> | <a href="/alerts">Alerts</a> | <a href="/add">Add Truck</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <div class="error">{{error}}</div>
+
+    <h3>Truck Details: {{truckName}}</h3>
+    <table>
+        <tr><td style="width: 200px;">Truck ID:</td><td><b>#{{truckId}}</b></td></tr>
+        <tr><td>Cargo Type:</td><td>{{cargo}}</td></tr>
+        <tr><td>Safe Range:</td><td>{{minTemp}} &deg;C to {{maxTemp}} &deg;C</td></tr>
+        <tr><td>Current Temperature:</td><td><b>{{currentTemp}} &deg;C</b></td></tr>
+        <tr><td>Current Humidity:</td><td>{{currentHumidity}} %</td></tr>
+        <tr><td>Status:</td><td>{{status}}</td></tr>
+        <tr><td>Last 10 Array Readings:</td><td><code>{{last10Values}}</code></td></tr>
+    </table>
+
+    <h3>Latest 20 Readings from Database</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Status</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{readingRows}}
+        </tbody>
+    </table>
+
+    <p style="margin-top: 15px;"><a href="/">Back to Dashboard</a> | <a href="/alerts?truck={{truckId}}">View Alerts for this Truck</a></p>
+    <p class="note">Uses: Practical 2 (double[] last10 array shift), Practical 4 (Truck model & checkLimit), Practical 10 (JDBC getReadings limit 20)</p>
+
+    <div class="team-container">
+        <h3>Project Team Members</h3>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/sanskar.jpg" alt="Sanskar Shinde">
+                <h4>Sanskar Shinde</h4>
+                <p>PRN: 202401103145</p>
+            </div>
+            <div class="team-card">
+                <img src="/sarvesh.jpg" alt="Sarvesh Ghodke">
+                <h4>Sarvesh Ghodke</h4>
+                <p>PRN: 202401103158</p>
+            </div>
+            <div class="team-card">
+                <img src="/aamer.jpg" alt="Aamer Sayed">
+                <h4>Aamer Sayed</h4>
+                <p>PRN: 202401103150</p>
+            </div>
+            <div class="team-card">
+                <img src="/rohan.jpg" alt="Rohan Tarke">
+                <h4>Rohan Tarke</h4>
+                <p>PRN: 202401103149</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

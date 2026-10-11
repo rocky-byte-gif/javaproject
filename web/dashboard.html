@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MediSync Lite - Clinic Management System</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>MediSync Lite - Clinic Management System</h2>
+    <div class="nav">
+        <a href="/">Dashboard</a> | <a href="/patients">Patients</a> | <a href="/doctors">Doctors & Appointments</a> | <a href="/bills">Bills</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <div class="msg">{{msg}}</div>
+    <div class="error">{{error}}</div>
+
+    <h3>Clinic Dashboard</h3>
+    <p><b>System Summary:</b> {{summary}}</p>
+    <p><b>Patient In-Memory Vector:</b> {{vectorInfo}} | <b>Waiting List Queue Size:</b> {{waitlistCount}}</p>
+
+    <h3>Doctor Schedules and Slot Availability</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Doctor ID</th>
+                <th>Doctor Name</th>
+                <th>Specialization</th>
+                <th>Free Slots</th>
+                <th>Slot 1 (10:00)</th>
+                <th>Slot 2 (10:30)</th>
+                <th>Slot 3 (11:00)</th>
+                <th>Slot 4 (11:30)</th>
+                <th>Slot 5 (12:00)</th>
+                <th>Slot 6 (12:30)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{doctorSlotsRows}}
+        </tbody>
+    </table>
+
+    <p class="note">Uses: Practical 1 (Control flow), Practical 2 (boolean[] booked array & Vector size/capacity), Practical 4 (Doctor Reportable & Bookable), Practical 8 (WaitlistTask daemon thread)</p>
+
+    <div class="footer">Demo project - fake data only</div>
+
+    <div class="team-container">
+        <h3>Project Team Members</h3>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/sanskar.jpg" alt="Sanskar Shinde">
+                <h4>1) Sanskar Shinde</h4>
+                <p>PRN: 202401103145</p>
+            </div>
+            <div class="team-card">
+                <img src="/sarvesh.jpg" alt="Sarvesh Ghodke">
+                <h4>2) Sarvesh Ghodke</h4>
+                <p>PRN: 202401103158</p>
+            </div>
+            <div class="team-card">
+                <img src="/aamer.jpg" alt="Aamer Sayed">
+                <h4>3) Aamer Sayed</h4>
+                <p>PRN: 202401103150</p>
+            </div>
+            <div class="team-card">
+                <img src="/rohan.jpg" alt="Rohan Tarke">
+                <h4>4) Rohan Tarke</h4>
+                <p>PRN: 202401103149</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

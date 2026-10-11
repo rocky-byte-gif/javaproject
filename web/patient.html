@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Medical File - MediSync Lite</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>MediSync Lite - Clinic Management System</h2>
+    <div class="nav">
+        <a href="/">Dashboard</a> | <a href="/patients">Patients</a> | <a href="/doctors">Doctors & Appointments</a> | <a href="/bills">Bills</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <div class="msg">{{msg}}</div>
+    <div class="error">{{error}}</div>
+
+    <h3>Patient Information: {{patientName}}</h3>
+    <table>
+        <tr><td style="width: 200px;">Patient ID:</td><td><b>{{patientId}}</b></td></tr>
+        <tr><td>Full Name:</td><td>{{patientName}}</td></tr>
+        <tr><td>Age:</td><td>{{patientAge}} years</td></tr>
+        <tr><td>Phone:</td><td>{{patientPhone}}</td></tr>
+        <tr><td>Blood Group:</td><td><b>{{patientBlood}}</b></td></tr>
+        <tr><td>Allergies:</td><td>{{patientAllergies}}</td></tr>
+        <tr><td>Role:</td><td>{{patientRole}}</td></tr>
+    </table>
+
+    <h3>Booked Appointments</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Appt ID</th>
+                <th>Doctor</th>
+                <th>Time Slot</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{appointmentRows}}
+        </tbody>
+    </table>
+
+    <h3>Medical Records & Diagnosis History</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Record ID</th>
+                <th>Diagnosis</th>
+                <th>Prescription</th>
+                <th>Attending Doctor</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{recordRows}}
+        </tbody>
+    </table>
+
+    <h4>Add New Medical Record</h4>
+    <form action="/records/add" method="post">
+        <input type="hidden" name="patient_id" value="{{patientId}}">
+        <table>
+            <tr>
+                <td>Diagnosis:</td>
+                <td><input type="text" name="diagnosis" required placeholder="e.g. Acute Bronchitis, Fever"></td>
+            </tr>
+            <tr>
+                <td>Prescription:</td>
+                <td><input type="text" name="prescription" required placeholder="e.g. Paracetamol 500mg, Rest"></td>
+            </tr>
+            <tr>
+                <td>Attending Doctor:</td>
+                <td>
+                    <select name="doctor_name">
+                        <option value="Dr. Mehta">Dr. Mehta (General)</option>
+                        <option value="Dr. Rao">Dr. Rao (Cardiology)</option>
+                        <option value="Dr. Khan">Dr. Khan (Pediatrics)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Save Record"></td>
+            </tr>
+        </table>
+    </form>
+
+    <h3>Patient Invoices & Bills</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Bill ID</th>
+                <th>Consultation</th>
+                <th>Medicine</th>
+                <th>Test Fee</th>
+                <th>Total</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{billRows}}
+        </tbody>
+    </table>
+
+    <p style="margin-top: 15px;"><a href="/patients">Back to Patient Directory</a></p>
+    <p class="note">Uses: Practical 3 (MedicalRecord & Appointment objects), Practical 4 (Billable calculateTotal), Practical 10 (JDBC saveRecord, getRecords, getBills)</p>
+
+    <div class="footer">Demo project - fake data only</div>
+
+    <div class="team-container">
+        <h3>Project Team Members</h3>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/sanskar.jpg" alt="Sanskar Shinde">
+                <h4>1) Sanskar Shinde</h4>
+                <p>PRN: 202401103145</p>
+            </div>
+            <div class="team-card">
+                <img src="/sarvesh.jpg" alt="Sarvesh Ghodke">
+                <h4>2) Sarvesh Ghodke</h4>
+                <p>PRN: 202401103158</p>
+            </div>
+            <div class="team-card">
+                <img src="/aamer.jpg" alt="Aamer Sayed">
+                <h4>3) Aamer Sayed</h4>
+                <p>PRN: 202401103150</p>
+            </div>
+            <div class="team-card">
+                <img src="/rohan.jpg" alt="Rohan Tarke">
+                <h4>4) Rohan Tarke</h4>
+                <p>PRN: 202401103149</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

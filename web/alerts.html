@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Breach Alerts - ColdTrack</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>ColdTrack - Cold Chain Temperature Monitor</h2>
+    <div class="nav">
+        <a href="/">Dashboard</a> | <a href="/alerts">Alerts</a> | <a href="/add">Add Truck</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <h3>Temperature Breach Alerts</h3>
+    <p>
+        Filter by Truck: <a href="/alerts">All Alerts</a> {{truckFilterLinks}}
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Alert ID</th>
+                <th>Truck ID</th>
+                <th>Breach Message</th>
+                <th>Breach Temperature</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{alertRows}}
+        </tbody>
+    </table>
+
+    <p class="note">Uses: Practical 6 (Static Alert counter), Practical 7 (TemperatureBreachException), Practical 10 (JDBC saveAlert & getAlerts)</p>
+
+    <div class="team-container">
+        <h3>Project Team Members</h3>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/sanskar.jpg" alt="Sanskar Shinde">
+                <h4>Sanskar Shinde</h4>
+                <p>PRN: 202401103145</p>
+            </div>
+            <div class="team-card">
+                <img src="/sarvesh.jpg" alt="Sarvesh Ghodke">
+                <h4>Sarvesh Ghodke</h4>
+                <p>PRN: 202401103158</p>
+            </div>
+            <div class="team-card">
+                <img src="/aamer.jpg" alt="Aamer Sayed">
+                <h4>Aamer Sayed</h4>
+                <p>PRN: 202401103150</p>
+            </div>
+            <div class="team-card">
+                <img src="/rohan.jpg" alt="Rohan Tarke">
+                <h4>Rohan Tarke</h4>
+                <p>PRN: 202401103149</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

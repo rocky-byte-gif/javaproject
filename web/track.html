@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Complaint - GrievanceGPT</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>GrievanceGPT - Municipal Complaint System</h2>
+    <div class="nav">
+        <a href="/">Home</a> | <a href="/track">Track</a> | <a href="/admin">Admin</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <h3>Track Complaint Status</h3>
+    <form action="/track" method="get">
+        <table>
+            <tr>
+                <td>Enter Ticket ID:</td>
+                <td><input type="text" name="id" value="{{searchId}}" style="width: 150px;"> <input type="submit" value="Search"></td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="error">{{error}}</div>
+
+    {{details}}
+
+    <p class="note">Uses: Practical 4 (Trackable interface), Practical 7 (ComplaintNotFoundException), Practical 8 (SlaMonitor escalation & ResolverTask resolution), Practical 9 (equalsIgnoreCase status check), Practical 10 (JDBC findById)</p>
+</body>
+</html>

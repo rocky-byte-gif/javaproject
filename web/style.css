@@ -1,0 +1,22 @@
+body { font-family: Arial, sans-serif; background: #ffffff; color: #000000; margin: 20px; }
+h2, h3, h4 { color: #000000; margin-top: 0; }
+a { color: #0000ee; text-decoration: underline; }
+.nav { padding-bottom: 10px; margin-bottom: 16px; border-bottom: 1px solid #888888; }
+table { border-collapse: collapse; width: 100%; margin-top: 8px; margin-bottom: 14px; }
+table, th, td { border: 1px solid #888888; padding: 6px 10px; text-align: left; }
+th { background-color: #f0f0f0; }
+input[type="text"], input[type="number"], select { border: 1px solid #888888; padding: 4px; width: 260px; }
+input[type="submit"], button { border: 1px solid #888888; background: #e0e0e0; padding: 4px 12px; cursor: pointer; }
+.msg { color: green; font-weight: bold; margin-bottom: 10px; }
+.error { color: red; font-weight: bold; margin-bottom: 10px; }
+.status-free, .status-paid { color: green; font-weight: bold; }
+.status-pending { color: orange; font-weight: bold; }
+.status-booked, .status-cancelled { color: red; font-weight: bold; }
+.note { font-size: 12px; color: #555555; margin-top: 12px; }
+.footer { margin-top: 25px; padding-top: 10px; border-top: 1px solid #cccccc; font-size: 13px; color: #444444; }
+.team-container { margin-top: 30px; padding-top: 16px; border-top: 1px solid #cccccc; }
+.team-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: flex-start; }
+.team-card { border: 1px solid #888888; padding: 10px; width: 180px; text-align: center; }
+.team-card img { width: 150px; height: 180px; object-fit: cover; border: 1px solid #888888; }
+.team-card h4 { margin: 8px 0 2px 0; font-size: 13px; }
+.team-card p { margin: 0; font-size: 12px; }

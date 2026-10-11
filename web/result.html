@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint Registered - GrievanceGPT</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>GrievanceGPT - Municipal Complaint System</h2>
+    <div class="nav">
+        <a href="/">Home</a> | <a href="/track">Track</a> | <a href="/admin">Admin</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <h3>Complaint Registered Successfully</h3>
+    <table>
+        <tr>
+            <td style="width: 220px;">Ticket ID:</td>
+            <td><b>{{id}}</b></td>
+        </tr>
+        <tr>
+            <td>Citizen Name:</td>
+            <td>{{name}}</td>
+        </tr>
+        <tr>
+            <td>Ward:</td>
+            <td>{{ward}}</td>
+        </tr>
+        <tr>
+            <td>Category:</td>
+            <td><b>{{category}}</b></td>
+        </tr>
+        <tr>
+            <td>Priority Score:</td>
+            <td><b>{{priority}} / 10</b></td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td><span class="status-open">{{status}}</span></td>
+        </tr>
+        <tr>
+            <td>Assigned Department Action:</td>
+            <td>{{actionMessage}}</td>
+        </tr>
+        <tr>
+            <td>Complaint Preview (40 chars):</td>
+            <td>"{{preview}}"</td>
+        </tr>
+    </table>
+
+    <p style="margin-top: 15px;"><a href="/track?id={{id}}">Track this ticket</a> | <a href="/">Submit another complaint</a></p>
+    <p class="note">Uses: Practical 1 (Type casting score), Practical 2 (Keyword 2D array & priority queue), Practical 4 (Department overriding handle), Practical 9 (String substring & proper-case), Practical 10 (JDBC save)</p>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Concepts - MediSync Lite</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>MediSync Lite - Clinic Management System</h2>
+    <div class="nav">
+        <a href="/">Dashboard</a> | <a href="/patients">Patients</a> | <a href="/doctors">Doctors & Appointments</a> | <a href="/bills">Bills</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <h3>Java Programming Lab Concepts (Practicals 1 to 10)</h3>
+    <p>This table maps all 10 lab practicals to the exact Java classes and methods in the MediSync Lite system.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Practical</th>
+                <th>Concept</th>
+                <th>Class and Method Where Used</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Practical 1</td>
+                <td>Syntax & Control Flow</td>
+                <td>ClinicService.getSummary(), Doctor.bookSlot(), Main.main()</td>
+                <td>if-else chains, switch on bill status, loops, (int) and (double) type casting in summary and bill total</td>
+            </tr>
+            <tr>
+                <td>Practical 2</td>
+                <td>Arrays & Vector</td>
+                <td>Doctor.booked boolean[6], Doctor.slotTimes String[6], int[3] bill status counts, Vector&lt;Patient&gt;, Vector&lt;Doctor&gt;, waitingList</td>
+                <td>Fixed arrays for doctor slots and bill tally; dynamic Vector collections with size(), capacity(), and insertElementAt() for emergency waitlist</td>
+            </tr>
+            <tr>
+                <td>Practical 3</td>
+                <td>Classes, Objects & Constructors</td>
+                <td>Person, Patient, Doctor, Appointment, MedicalRecord, Bill</td>
+                <td>Default constructors, parameterized constructors, and object encapsulation</td>
+            </tr>
+            <tr>
+                <td>Practical 4</td>
+                <td>Interfaces, Overloading & Overriding</td>
+                <td>Bookable, Billable, Reportable, Patient, Doctor, ClinicService</td>
+                <td>Multiple interface inheritance; overridden getRole() and getSummary(); overloaded addPatient() and bookSlot()</td>
+            </tr>
+            <tr>
+                <td>Practical 5</td>
+                <td>Packages</td>
+                <td>medisync.model, exception, service, db, web</td>
+                <td>Structured modular architecture with clean package declarations and explicit imports</td>
+            </tr>
+            <tr>
+                <td>Practical 6</td>
+                <td>this, super, static, final</td>
+                <td>Person, Patient, Doctor, Bill.Builder</td>
+                <td>this() chaining in Person; super() in Patient/Doctor; this-returning Bill.Builder; static patient/bill counters; final SLOTS_PER_DOCTOR; final getDisplayName()</td>
+            </tr>
+            <tr>
+                <td>Practical 7</td>
+                <td>Exception Handling</td>
+                <td>PatientNotFoundException, SlotNotAvailableException, InvalidPatientException, InvalidBillException</td>
+                <td>Four custom checked exceptions, throw, throws, and try-catch-finally blocks</td>
+            </tr>
+            <tr>
+                <td>Practical 8</td>
+                <td>Multithreading & Synchronization</td>
+                <td>BookingThread (Thread), WaitlistTask (Runnable), Doctor.bookSlot()</td>
+                <td>Concurrent booking threads, Thread.sleep(), join(), daemon background thread, synchronized doctor slots preventing double-booking</td>
+            </tr>
+            <tr>
+                <td>Practical 9</td>
+                <td>String Methods</td>
+                <td>Person.getDisplayName(), ClinicService.searchPatients(), WebServer</td>
+                <td>split, substring, indexOf, charAt, startsWith, trim, toUpperCase, toLowerCase, equalsIgnoreCase, contains, length, concat</td>
+            </tr>
+            <tr>
+                <td>Practical 10</td>
+                <td>JDBC (MySQL)</td>
+                <td>DbConnection, ClinicDao</td>
+                <td>PreparedStatement and ResultSet for insert, update, delete, select, and filter queries across clinic tables</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="note">Uses: All 10 Java Lab Practicals (P1 - P10)</p>
+
+    <div class="footer">Demo project - fake data only</div>
+
+    <div class="team-container">
+        <h3>Project Team Members</h3>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/sanskar.jpg" alt="Sanskar Shinde">
+                <h4>1) Sanskar Shinde</h4>
+                <p>PRN: 202401103145</p>
+            </div>
+            <div class="team-card">
+                <img src="/sarvesh.jpg" alt="Sarvesh Ghodke">
+                <h4>2) Sarvesh Ghodke</h4>
+                <p>PRN: 202401103158</p>
+            </div>
+            <div class="team-card">
+                <img src="/aamer.jpg" alt="Aamer Sayed">
+                <h4>3) Aamer Sayed</h4>
+                <p>PRN: 202401103150</p>
+            </div>
+            <div class="team-card">
+                <img src="/rohan.jpg" alt="Rohan Tarke">
+                <h4>4) Rohan Tarke</h4>
+                <p>PRN: 202401103149</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

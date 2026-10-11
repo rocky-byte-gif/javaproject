@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Truck - ColdTrack</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>ColdTrack - Cold Chain Temperature Monitor</h2>
+    <div class="nav">
+        <a href="/">Dashboard</a> | <a href="/alerts">Alerts</a> | <a href="/add">Add Truck</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <div class="error">{{error}}</div>
+
+    <h3>Add New Refrigerated Truck</h3>
+    <form action="/add" method="post">
+        <table>
+            <tr>
+                <td>Truck Name:</td>
+                <td><input type="text" name="name" value="{{name}}" placeholder="e.g. Express Cold Carrier 4"></td>
+            </tr>
+            <tr>
+                <td>Cargo Type:</td>
+                <td>
+                    <select name="cargo">
+                        <option value="vaccine">Vaccine (Safe 2.0 to 8.0 &deg;C)</option>
+                        <option value="frozen">Frozen Food (Safe -20.0 to -15.0 &deg;C)</option>
+                        <option value="food">Fresh Food (Safe 0.0 to 5.0 &deg;C)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Custom Min Temp (&deg;C, optional):</td>
+                <td><input type="text" name="min" value="{{min}}" placeholder="Leave empty for default"></td>
+            </tr>
+            <tr>
+                <td>Custom Max Temp (&deg;C, optional):</td>
+                <td><input type="text" name="max" value="{{max}}" placeholder="Leave empty for default"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add Truck & Start Sensor"></td>
+            </tr>
+        </table>
+    </form>
+
+    <p class="note">Uses: Practical 3 (Truck object instantiation), Practical 4 (Overloaded addTruck), Practical 7 (Validation exception), Practical 8 (Dynamic SensorThread start)</p>
+
+    <div class="team-container">
+        <h3>Project Team Members</h3>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/sanskar.jpg" alt="Sanskar Shinde">
+                <h4>Sanskar Shinde</h4>
+                <p>PRN: 202401103145</p>
+            </div>
+            <div class="team-card">
+                <img src="/sarvesh.jpg" alt="Sarvesh Ghodke">
+                <h4>Sarvesh Ghodke</h4>
+                <p>PRN: 202401103158</p>
+            </div>
+            <div class="team-card">
+                <img src="/aamer.jpg" alt="Aamer Sayed">
+                <h4>Aamer Sayed</h4>
+                <p>PRN: 202401103150</p>
+            </div>
+            <div class="team-card">
+                <img src="/rohan.jpg" alt="Rohan Tarke">
+                <h4>Rohan Tarke</h4>
+                <p>PRN: 202401103149</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

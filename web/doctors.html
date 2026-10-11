@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctors & Appointments - MediSync Lite</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>MediSync Lite - Clinic Management System</h2>
+    <div class="nav">
+        <a href="/">Dashboard</a> | <a href="/patients">Patients</a> | <a href="/doctors">Doctors & Appointments</a> | <a href="/bills">Bills</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <div class="msg">{{msg}}</div>
+    <div class="error">{{error}}</div>
+
+    <h3>Doctors & Daily Slot Status</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Doctor</th>
+                <th>Specialization</th>
+                <th>Free Slots</th>
+                <th>10:00</th>
+                <th>10:30</th>
+                <th>11:00</th>
+                <th>11:30</th>
+                <th>12:00</th>
+                <th>12:30</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{doctorRows}}
+        </tbody>
+    </table>
+
+    <h3>Book Doctor Appointment</h3>
+    <form action="/book" method="post">
+        <table>
+            <tr>
+                <td>Patient ID:</td>
+                <td><input type="text" name="patient_id" required placeholder="e.g. MS-2026-0001"></td>
+            </tr>
+            <tr>
+                <td>Select Doctor:</td>
+                <td>
+                    <select name="doctor_id">
+                        {{doctorOptions}}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Emergency Case?</td>
+                <td>
+                    <input type="checkbox" name="emergency" value="true" style="width: auto;">
+                    <span style="font-size: 13px;">(If doctor slots are completely full, moves patient directly to front of waitlist)</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Confirm Booking"></td>
+            </tr>
+        </table>
+    </form>
+
+    <h3>Concurrency Test: Rush Booking Simulator</h3>
+    <p>Simulates <b>8 simultaneous patient threads</b> competing for slots with random delays (0-200ms) to test thread safety and prevent double booking.</p>
+    <form action="/rush" method="post">
+        <table>
+            <tr>
+                <td>Target Doctor for Rush Test:</td>
+                <td>
+                    <select name="doctor_id">
+                        {{doctorOptions}}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Start 8-Thread Rush Booking Test"></td>
+            </tr>
+        </table>
+    </form>
+
+    <p class="note">Uses: Practical 2 (Vector waitingList & insertElementAt), Practical 4 (Doctor.bookSlot & Bookable), Practical 7 (SlotNotAvailableException), Practical 8 (synchronized doctor slots, BookingThread, Thread.sleep, join)</p>
+
+    <div class="footer">Demo project - fake data only</div>
+
+    <div class="team-container">
+        <h3>Project Team Members</h3>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/sanskar.jpg" alt="Sanskar Shinde">
+                <h4>1) Sanskar Shinde</h4>
+                <p>PRN: 202401103145</p>
+            </div>
+            <div class="team-card">
+                <img src="/sarvesh.jpg" alt="Sarvesh Ghodke">
+                <h4>2) Sarvesh Ghodke</h4>
+                <p>PRN: 202401103158</p>
+            </div>
+            <div class="team-card">
+                <img src="/aamer.jpg" alt="Aamer Sayed">
+                <h4>3) Aamer Sayed</h4>
+                <p>PRN: 202401103150</p>
+            </div>
+            <div class="team-card">
+                <img src="/rohan.jpg" alt="Rohan Tarke">
+                <h4>4) Rohan Tarke</h4>
+                <p>PRN: 202401103149</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

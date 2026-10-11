@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing & Invoices - MediSync Lite</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>MediSync Lite - Clinic Management System</h2>
+    <div class="nav">
+        <a href="/">Dashboard</a> | <a href="/patients">Patients</a> | <a href="/doctors">Doctors & Appointments</a> | <a href="/bills">Bills</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <div class="msg">{{msg}}</div>
+    <div class="error">{{error}}</div>
+
+    <h3>Clinic Invoices & Bills</h3>
+    <p>
+        Filter by Status:
+        <a href="/bills">All</a> |
+        <a href="/bills?status=PENDING">Pending</a> |
+        <a href="/bills?status=PAID">Paid</a> |
+        <a href="/bills?status=CANCELLED">Cancelled</a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Bill ID</th>
+                <th>Patient ID</th>
+                <th>Consultation Fee</th>
+                <th>Medicine Fee</th>
+                <th>Diagnostic Test Fee</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{billRows}}
+        </tbody>
+    </table>
+
+    <h3>Generate New Bill (Bill.Builder)</h3>
+    <form action="/bills" method="post">
+        <table>
+            <tr>
+                <td>Patient ID:</td>
+                <td><input type="text" name="patient_id" required placeholder="e.g. MS-2026-0001"></td>
+            </tr>
+            <tr>
+                <td>Consultation Fee (INR):</td>
+                <td><input type="number" step="0.5" name="consultation" required value="500"></td>
+            </tr>
+            <tr>
+                <td>Medicine Fee (INR):</td>
+                <td><input type="number" step="0.5" name="medicine" required value="250"></td>
+            </tr>
+            <tr>
+                <td>Diagnostic Test Fee (INR):</td>
+                <td><input type="number" step="0.5" name="test_fee" required value="0"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Generate Invoice"></td>
+            </tr>
+        </table>
+    </form>
+
+    <p class="note">Uses: Practical 4 (Billable interface & calculateTotal), Practical 6 (Static nested Bill.Builder with method chaining & static bill counter), Practical 7 (InvalidBillException), Practical 10 (JDBC saveBill, updateBillStatus, getBillsByStatus)</p>
+
+    <div class="footer">Demo project - fake data only</div>
+
+    <div class="team-container">
+        <h3>Project Team Members</h3>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/sanskar.jpg" alt="Sanskar Shinde">
+                <h4>1) Sanskar Shinde</h4>
+                <p>PRN: 202401103145</p>
+            </div>
+            <div class="team-card">
+                <img src="/sarvesh.jpg" alt="Sarvesh Ghodke">
+                <h4>2) Sarvesh Ghodke</h4>
+                <p>PRN: 202401103158</p>
+            </div>
+            <div class="team-card">
+                <img src="/aamer.jpg" alt="Aamer Sayed">
+                <h4>3) Aamer Sayed</h4>
+                <p>PRN: 202401103150</p>
+            </div>
+            <div class="team-card">
+                <img src="/rohan.jpg" alt="Rohan Tarke">
+                <h4>4) Rohan Tarke</h4>
+                <p>PRN: 202401103149</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patients - MediSync Lite</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>MediSync Lite - Clinic Management System</h2>
+    <div class="nav">
+        <a href="/">Dashboard</a> | <a href="/patients">Patients</a> | <a href="/doctors">Doctors & Appointments</a> | <a href="/bills">Bills</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <div class="msg">{{msg}}</div>
+    <div class="error">{{error}}</div>
+
+    <h3>Patient Directory</h3>
+    <form action="/patients" method="get">
+        <input type="text" name="search" value="{{search}}" placeholder="Search by name or ID...">
+        <input type="submit" value="Search">
+        <a href="/patients">Reset</a>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Name (Proper Case)</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Blood Group</th>
+                <th>Allergies</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{patientRows}}
+        </tbody>
+    </table>
+
+    <h3>Register New Patient</h3>
+    <form action="/patients/add" method="post">
+        <table>
+            <tr>
+                <td>Patient Full Name:</td>
+                <td><input type="text" name="name" required placeholder="e.g. Rahul Sharma"></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" name="age" required min="0" max="120" placeholder="e.g. 29"></td>
+            </tr>
+            <tr>
+                <td>Phone (10 digits):</td>
+                <td><input type="text" name="phone" required maxlength="10" placeholder="e.g. 9876543210"></td>
+            </tr>
+            <tr>
+                <td>Blood Group:</td>
+                <td>
+                    <select name="blood">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Allergies:</td>
+                <td><input type="text" name="allergies" placeholder="e.g. Penicillin, Peanuts or None"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Register Patient"></td>
+            </tr>
+        </table>
+    </form>
+
+    <p class="note">Uses: Practical 3 (Patient constructor), Practical 4 (Overloaded addPatient & getRole), Practical 6 (Static patient counter & proper-case getDisplayName), Practical 7 (InvalidPatientException), Practical 9 (String search & 10-digit validation)</p>
+
+    <div class="footer">Demo project - fake data only</div>
+
+    <div class="team-container">
+        <h3>Project Team Members</h3>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/sanskar.jpg" alt="Sanskar Shinde">
+                <h4>1) Sanskar Shinde</h4>
+                <p>PRN: 202401103145</p>
+            </div>
+            <div class="team-card">
+                <img src="/sarvesh.jpg" alt="Sarvesh Ghodke">
+                <h4>2) Sarvesh Ghodke</h4>
+                <p>PRN: 202401103158</p>
+            </div>
+            <div class="team-card">
+                <img src="/aamer.jpg" alt="Aamer Sayed">
+                <h4>3) Aamer Sayed</h4>
+                <p>PRN: 202401103150</p>
+            </div>
+            <div class="team-card">
+                <img src="/rohan.jpg" alt="Rohan Tarke">
+                <h4>4) Rohan Tarke</h4>
+                <p>PRN: 202401103149</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

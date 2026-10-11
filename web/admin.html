@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - GrievanceGPT</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>GrievanceGPT - Municipal Complaint System</h2>
+    <div class="nav">
+        <a href="/">Home</a> | <a href="/track">Track</a> | <a href="/admin">Admin</a> | <a href="/concepts">Concepts</a>
+    </div>
+
+    <h3>Admin Grievance Dashboard</h3>
+
+    <p>
+        Filter by Department:
+        <a href="/admin">All</a> |
+        <a href="/admin?cat=WATER"><span class="badge badge-water">Water</span></a> |
+        <a href="/admin?cat=ROAD"><span class="badge badge-road">Road</span></a> |
+        <a href="/admin?cat=SANITATION"><span class="badge badge-sanitation">Sanitation</span></a> |
+        <a href="/admin?cat=ELECTRICITY"><span class="badge badge-electricity">Electricity</span></a> |
+        <a href="/admin?cat=GENERAL"><span class="badge badge-general">General</span></a>
+    </p>
+
+    <div class="queue-box">
+        <b>In-Memory Vector Queue Status:</b> Current Size = <b>{{queueSize}}</b> | Allocated Capacity = <b>{{queueCapacity}}</b>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ticket ID</th>
+                <th>Citizen Name</th>
+                <th>Ward</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Complaint Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{complaintRows}}
+        </tbody>
+    </table>
+
+    <p class="note">Uses: Practical 2 (Vector size & capacity, urgent complaints front insertion), Practical 8 (Thread synchronization on Vector), Practical 10 (JDBC findByCategory)</p>
+</body>
+</html>
